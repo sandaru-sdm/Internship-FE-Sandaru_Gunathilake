@@ -1,3 +1,4 @@
+/* General Reset and Body Styles */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@ body {
   background-color: #ffffff;
 }
 
+/* Global Utility Classes */
 .spacer {
   width: 100%;
   height: clamp(100px, 15vw, 250px);
@@ -32,6 +34,7 @@ body {
   background-color: #ffffff;
 }
 
+/* Main Content Box (for section 1) */
 .content-box {
   position: relative;
   top: clamp(80px, 12vw, 137px);
@@ -69,6 +72,7 @@ body {
   color: #000743;
 }
 
+/* Navigation Button Styles */
 .btn-nav {
   background: #ff3366;
   color: #ffffff;
@@ -85,6 +89,13 @@ body {
   align-items: center;
   gap: 15px;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effects */
+}
+
+.btn-nav:hover {
+  background-color: #ff4d79;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .right-arrow {
@@ -92,6 +103,7 @@ body {
   line-height: 1;
 }
 
+/* Box Shadow Style for Logos */
 .box-shadow {
   position: absolute;
   width: clamp(60px, 8vw, 117px);
@@ -163,7 +175,7 @@ body {
   mix-blend-mode: multiply;
 }
 
-/* animate Left side logo boxes */
+/* Animate Left side logo boxes */
 [class*="logo-left-"][class*="-box"] {
   transition: transform 0.4s ease;
 }
@@ -228,7 +240,7 @@ body {
   height: clamp(26px, 4vw, 52px);
 }
 
-/* animate Right side logo boxes */
+/* Animate Right side logo boxes */
 [class*="logo-right-"][class*="-box"] {
   transition: transform 0.4s ease;
 }
@@ -237,7 +249,7 @@ body {
   transform: rotate(5deg) scale(1.05);
 }
 
-/* hidden state */
+/* Hidden state for logos */
 .logo-left-1-box,
 .logo-left-2-box,
 .logo-left-3-box,
@@ -268,7 +280,7 @@ body {
   transform: translateX(100px);
 }
 
-/* Animate to original position */
+/* Animate logos to original position */
 .logo-left-1-box.visible,
 .logo-left-2-box.visible,
 .logo-left-3-box.visible,
@@ -283,7 +295,7 @@ body {
   opacity: 1;
 }
 
-/* Section 2 */
+/* Section 2 Styles */
 .section-2 {
   width: 100%;
   min-height: 523px;
@@ -308,7 +320,6 @@ body {
     clamp(60px, 10vw, 120px) 20px;
   display: flex;
   flex-direction: column;
-
   opacity: 0;
   transform: translateY(50px);
   transition: transform 0.8s ease, opacity 0.8s ease;
@@ -354,18 +365,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* animate buttons */
-.btn-nav,
-.btn-section2 {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-nav:hover {
-  background-color: #ff4d79;
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effects */
 }
 
 .btn-section2:hover {
@@ -447,17 +447,6 @@ body {
 
 .section2-img-1-details {
   position: absolute;
-  width: clamp(80px, 20vw, 232px);
-  height: clamp(50px, 10vw, 96px);
-  left: clamp(30px, 12vw, 30px);
-  bottom: clamp(-30px, -8vw, -90px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.section2-img-1-details {
-  position: absolute;
   width: clamp(100px, 20vw, 232px);
   height: clamp(50px, 10vw, 96px);
   left: 50%;
@@ -506,7 +495,7 @@ body {
   align-self: center;
 }
 
-/* Section 3 */
+/* Section 3 Styles */
 .section-3 {
   position: relative;
   width: 100%;
@@ -550,13 +539,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.section3-box2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-direction: column; /* Added for vertical alignment of text */
   padding-left: 40px;
   height: 100%;
   padding-top: 8%;
@@ -570,7 +553,6 @@ body {
   color: #000743;
   margin-left: 0;
   width: 60%;
-
 }
 
 .section3-box2 p {
@@ -628,26 +610,13 @@ body {
   font-size: clamp(12px, 1.5vw, 16px);
 }
 
-/* hidden state */
+/* Hidden state for section 3 boxes */
 .section3-box1,
 .section3-box2 {
   opacity: 0;
-  transform: translateX(0); 
   transition: all 0.8s ease-out;
 }
 
-.section3-box1.animate-left {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* Animation for box2 */
-.section3-box2.animate-right {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-/* When initially hidden */
 .section3-box1.hidden-left {
   transform: translateX(-100px);
 }
@@ -656,8 +625,87 @@ body {
   transform: translateX(100px);
 }
 
+/* Animation for section 3 boxes */
+.section3-box1.animate-left {
+  transform: translateX(0);
+  opacity: 1;
+}
 
-/* Mobile Responsive Adjustments */
+.section3-box2.animate-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Section 4  */
+.section-4-wrapper { 
+  width: 100%; 
+  height: 585px; 
+  background-color: #000743;  
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  position: relative; 
+  overflow: hidden; 
+} 
+
+/* Left top corner gradient */
+.section-4-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Right top corner gradient */
+.section-4-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+.section-4-content { 
+  text-align: center; 
+  color: #ffffff; 
+  z-index: 1; 
+  opacity: 0;  
+  transform: translateY(50px);  
+  transition: opacity 1s ease-out, transform 1s ease-out;  
+} 
+ 
+.section-4-content.animate-in { 
+  opacity: 1; 
+  transform: translateY(0);  
+} 
+ 
+.section-4-content h1 { 
+  width: 610px;  
+  font-size: 80px; 
+  margin-bottom: 30px; 
+  font-weight: 700; 
+  font-weight: bold; 
+} 
+ 
+.btn-connect { 
+  display: block; 
+  margin: 0 auto; 
+} 
+ 
+.btn-connect:hover { 
+  background-color: #e02b5e; 
+}
+
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .section-2 {
     flex-direction: column;
@@ -716,6 +764,11 @@ body {
   .section3-box2 {
     width: 100%;
     min-height: 300px;
+  }
+
+  .section-4-content h1 {
+      width: 90%; 
+      font-size: clamp(40px, 8vw, 80px); 
   }
 
   /* Hide logos on very small screens */

@@ -50,4 +50,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (section2) observer.observe(section2);
   if (section3) observer.observe(section3);
+
+  const section4Wrapper = document.querySelector(".section-4-wrapper");
+  const section4Content = document.querySelector(".section-4-content");
+
+  const section4Observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+          section4Content?.classList.add("animate-in");
+          observer.unobserve(section4Wrapper); 
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  if (section4Wrapper) {
+    section4Observer.observe(section4Wrapper);
+  }
 });
